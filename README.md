@@ -55,7 +55,7 @@ To view the project locally:
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/organic-store/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/jabbar1911/organic-store/issues).
 
 ## 📄 License
 
