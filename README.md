@@ -28,7 +28,7 @@ A modern, responsive, and high-performance e-commerce landing page built for an 
 ## 📂 Project Structure
 
 ```text
-Day_77_79/
+organic-store/
 ├── assets/
 │   └── images/       # Product and carousel images
 ├── css/
