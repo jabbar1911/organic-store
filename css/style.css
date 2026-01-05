@@ -1,0 +1,412 @@
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary-green), var(--dark-green));
+    border-radius: 10px;
+    border: 2px solid #0f172a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-green);
+}
+
+:root {
+    --primary-green: #10b981;
+    --dark-green: #065f46;
+    --light-bg: #f8fafc;
+    --accent-gold: #fbbf24;
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    --card-hover-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --font-main: 'Outfit', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: #1e293b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Navbar --- */
+.navbar {
+    padding: 1rem 0;
+    background-color: #0f172a !important;
+    /* Rich Dark Ocean */
+}
+
+.navbar-brand,
+.footer-brand {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--primary-green) !important;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.text-success {
+    color: var(--primary-green) !important;
+}
+
+/* --- Hero Section & Animations --- */
+#home {
+    background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);
+    padding: 120px 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+#home h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: -1px;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#home p {
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Scroll To Top --- */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(0.8);
+}
+
+#scrollToTop.show {
+    display: flex;
+    transform: scale(1);
+}
+
+#scrollToTop:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* --- Navbar Dynamic Style --- */
+.navbar {
+    transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95) !important;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Sections --- */
+.card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-container {
+    height: 280px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+/* Ensure logos are consistent */
+.navbar-brand i,
+.footer-brand i {
+    color: var(--primary-green);
+}
+
+/* --- Footer Enhancements --- */
+.footer-link {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-link:hover {
+    color: var(--primary-green) !important;
+    padding-left: 5px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: var(--primary-green);
+    color: white !important;
+}
+
+/* --- Trust Badges --- */
+.trust-badge {
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-badge:hover {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.2);
+    transform: translateX(5px);
+}
+
+.trust-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.btn-buy {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: var(--primary-green) !important;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: var(--dark-green) !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-light {
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+/* --- Carousel --- */
+.carousel {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Custom smoother transition */
+.carousel-item {
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* --- Sections --- */
+/* --- Glassmorphism Navbar --- */
+.navbar {
+    padding: 0.8rem 0;
+    background: rgba(15, 23, 42, 0.8) !important;
+    /* Semi-transparent Dark */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Toast Notifications --- */
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+}
+
+.custom-toast {
+    background: white;
+    color: #0f172a;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-left: 4px solid var(--primary-green);
+    font-weight: 600;
+}
+
+.custom-toast.show {
+    transform: translateX(0);
+}
+
+/* --- Floating Cart --- */
+.floating-cart {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: none;
+    /* Only show on mobile */
+}
+
+@media (max-width: 768px) {
+    .floating-cart {
+        display: flex;
+    }
+
+    .navbar .btn-outline-success {
+        display: none;
+        /* Hide top cart on small mobile to favor FAB */
+    }
+}
+
+.floating-cart:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 20px rgba(16, 185, 129, 0.5);
+}
+
+/* --- Order Summary in Checkout --- */
+.summary-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.trust-badge-row {
+    display: flex;
+    gap: 15px;
+    opacity: 0.6;
+    margin-top: 1.5rem;
+    filter: grayscale(1);
+    transition: opacity 0.3s ease;
+}
+
+.trust-badge-row:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+.checkout-header {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--primary-green);
+}
